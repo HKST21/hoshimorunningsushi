@@ -1,0 +1,53 @@
+{
+  "expo": {
+    "name": "Hoshimo Running Sushi",
+    "slug": "hoshimo-running-sushi",
+    "owner": "hkst",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "backgroundColor": "#f6bac4"
+    },
+    "scheme": "hoshimorunningsushi",
+    "ios": {
+      "supportsTablet": false,
+      "userInterfaceStyle": "light",
+      "bundleIdentifier": "dev.gastroapp.hoshimorunningsushi",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSCameraUsageDescription": "Tato aplikace používá fotoaparát pro skenování QR kódů v restauraci pro získání tokenů.",
+        "NSLocationWhenInUseUsageDescription": "Potřebujeme vaši polohu pro ověření, že jste v restauraci při skenování QR kódů."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "dev.gastroapp.hoshimorunningsushi",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-dev-client",
+      "expo-secure-store",
+      "expo-camera",
+      "expo-location"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "2c7f3d13-de5d-4677-a5a6-a62f7546039e"
+      }
+    }
+  }
+}
