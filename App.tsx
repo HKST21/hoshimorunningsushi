@@ -1,20 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// App.tsx
+import AppNavigator from "./src/components/navigation/AppNavigator";
+import {SafeAreaProvider} from "react-native-safe-area-context";
+import Toast from "react-native-toast-message";
+import {UserProvider} from "./src/components/services/UserContext";
+import {initializeLanguage} from "./src/components/services/LanguageUtils"; // ✅ Destrukturovaný import
+
+// ✅ Inicializace jazyka při startu aplikace
+initializeLanguage();
 
 export default function App() {
     return (
-        <View style={styles.container}>
-            <Text>Hoshimo Running Sushi - Development Version</Text>
-            <StatusBar style="auto" />
-        </View>
+        <UserProvider>
+            <SafeAreaProvider>
+                <AppNavigator/>
+                <Toast/>
+            </SafeAreaProvider>
+        </UserProvider>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
