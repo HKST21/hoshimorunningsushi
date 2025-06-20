@@ -23,7 +23,8 @@ import {UserVoucher} from '../models/interfaces';
 import {useFadeBetweenTabs} from "../services/useFadeBetweenTabs";
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
-import {getText} from "../services/LanguageUtils"; // ✅ Import lokalizace
+import {getText} from "../services/LanguageUtils";
+import {translateCoupons} from "../services/CuoponMapper";
 import designSystem from '../constants/globalStyles';
 
 // Import obrázku z assets
@@ -59,12 +60,21 @@ export default function Kupony() {
     // Loading state
     const [isLoading, setIsLoading] = useState(true);
 
-    // Reálné načítání - skeleton dokud nejsou vouchers
+    // State pro přeložené kupóny
+    const [translatedVouchers, setTranslatedVouchers] = useState<UserVoucher[]>([]);
+
+    // Reálné načítání + automatický překlad kupónů
     React.useEffect(() => {
         if (loggedUser?.vouchers) {
             setIsLoading(false);
+
+            // Automaticky přeložíme všechny kupóny
+            const translated = translateCoupons(loggedUser.vouchers);
+            setTranslatedVouchers(translated);
+
         } else if (loggedUser) {
             setIsLoading(true);
+            setTranslatedVouchers([]);
         }
     }, [loggedUser]);
 
@@ -93,6 +103,8 @@ export default function Kupony() {
             }
         }, [loggedUser, navigation])
     );
+
+
 
     // Stav pro sledování animací, modalu a vybraného voucheru
     const [selectedVoucher, setSelectedVoucher] = useState<UserVoucher | null>(null);
@@ -136,8 +148,8 @@ export default function Kupony() {
             setAnimatingVoucherId(null);
             Vibration.vibrate(100);
 
-            if (loggedUser && loggedUser.vouchers) {
-                const foundVoucher = loggedUser.vouchers.find(v => v.id === voucherId);
+            if (loggedUser && translatedVouchers) {
+                const foundVoucher = translatedVouchers.find(v => v.id === voucherId);
 
                 if (foundVoucher) {
                     setSelectedVoucher(foundVoucher);
@@ -225,14 +237,14 @@ export default function Kupony() {
                         <Text style={styles.categoryTitle}>{getText('coupons.couponsTitle')}</Text>
 
                         {/* Filtrujeme pouze kupony s vip = false */}
-                        {(!loggedUser?.vouchers || loggedUser?.vouchers.filter(v => v.voucher.vip === false).length === 0) ? (
+                        {(!translatedVouchers || translatedVouchers.filter(v => v.voucher.vip === false).length === 0) ? (
                             <View style={styles.emptyContainer}>
                                 <Text style={styles.emptyText}>{getText('coupons.noCoupons')}</Text>
                             </View>
                         ) : (
                             /* Seznam voucherů */
                             <View style={styles.itemsContainer}>
-                                {loggedUser?.vouchers
+                                {translatedVouchers
                                     .filter(item => item.voucher.vip === false)
                                     .sort((a, b) => (a.voucher.requiredVisits || 0) - (b.voucher.requiredVisits || 0))
                                     .map((item) => {

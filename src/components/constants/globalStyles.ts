@@ -312,7 +312,7 @@ const designSystem = {
         },
         fadeBetweenScreens: { // FADE BETWEEN SCREENS(TABY), používáme při přecházení na jiné screens pomocí tabů jen těch neskytých. efekt fade in fade out
             type: "timing",
-            duration: 400,
+            duration: 300,
             easing: "ease-in-out",
             animation: {
                 opacity: [0, 1],
@@ -323,7 +323,7 @@ const designSystem = {
     transitions: {
         screen: { // SCREEN TRANSITION(NON TABY) na přechody mezi stack screens a také mezi taby, ale těmi skrytými. Jednoduše všechny přechody na jiné screens kromě komponent v tab navigatoru.
             type: "timing",
-            duration: 500, // plynulý přechod mezi screens
+            duration: 300, // plynulý přechod mezi screens
             easing: "ease-in-out",
             animation: {
                 opacity: [0, 1], // jemný fade in protože z 0 opacity jdeme na 1 opacity

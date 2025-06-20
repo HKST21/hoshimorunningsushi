@@ -110,13 +110,37 @@ export const translations = {
                 second: '.',
                 third: '.',
                 other: '.'
+            },
+
+            coca_cola: {
+                name: 'Coca Cola zdarma',
+                description: 'Coca Cola zdarma pro každou osobu při objednání running sushi. Platí s jakoukoliv objednávkou running sushi.'
+            },
+
+            children_sushi: {
+                name: 'Dětské running sushi zdarma',
+                description: 'Děti do 10 let jedí running sushi zdarma v doprovodu platící dospělé osoby. Vyžadován platný doklad totožnosti.'
+            },
+
+            sake_drink: {
+                name: 'Uvítací saké nápoj',
+                description: 'Uvítací panák saké zdarma pro každou osobu u vašeho stolu. Pouze 18+ s platným dokladem totožnosti.'
+            },
+
+            discount_10: {
+                name: '-10% sleva na running sushi',
+                description: 'Získejte 10% slevu na cenu running sushi pro každou osobu u vašeho stolu. Platí až pro 6 osob.'
+            },
+
+            premium_boat: {
+                name: 'Prémiový Dragon Boat Sushi',
+                description: 'Prémiový sushi talíř v hodnotě £100 zdarma k vašemu running sushi zážitku. Musíte objednat pro 2+ osoby.'
             }
+
         },
 
         // News screen
-        news: {
-            close: 'Zavřít'
-        },
+
 
         login: {
             unsupportedPlatform: 'Nepodporovaná platforma',
@@ -421,6 +445,242 @@ export const translations = {
             }
         },
 
+        restaurantMenuCommon: {
+            loadingMenu: 'Načítání menu...',
+            infoText: 'Užijte si neomezeně všechna jídla níže',
+            prepTime: 'Čas přípravy:',
+            popularity: 'Oblíbenost:',
+            thankYouRating: 'Děkujeme za vaše hodnocení!',
+            allergens: 'Alergeny:',
+            backToMenu: 'Zpět do menu'
+        },
+
+        restaurantMenu: {
+            categories: {
+                allYouCanEat: 'ALL YOU CAN EAT',
+                sushi: 'Sushi',
+                maki: 'Maki',
+                hotDishes: 'Teplá jídla',
+                drinks: 'Nápoje',
+                desserts: 'Dezerty'
+            },
+
+            items: {
+                // All You Can Eat
+                adultAllYouCanEat: {
+                    name: 'Dospělý - All you can eat',
+                    perex: 'Neomezený přístup k naší kompletní running sushi zkušenosti',
+                    description: 'Užijte si neomezený přístup k našemu celému running sushi pásu s čerstvým sushi, maki, teplými jídly a dezerty. Naši šéfkuchaři průběžně připravují nové položky během vaší návštěvy. Nápoje se objednávají zvlášť.'
+                },
+                childAllYouCanEat: {
+                    name: 'Dětské - All you can eat',
+                    perex: 'Neomezené running sushi pro děti do 15 let',
+                    description: 'Děti do 15 let si užívají stejný neomezený přístup k naší kompletní running sushi zkušenosti za sníženou cenu. Perfektní uvedení do autentické japonské kuchyně pro mladé jedlíky.'
+                },
+
+                // Sushi
+                eelNigiri: {
+                    name: 'Úhoř Nigiri',
+                    perex: 'Glazovaný sladkovodní úhoř se sladkou omáčkou'
+                },
+                mackerelNigiri: {
+                    name: 'Makrela Nigiri',
+                    perex: 'Nakládaná makrela s tradiční octovou přípravou'
+                },
+                octopusNigiri: {
+                    name: 'Chobotnice Nigiri',
+                    perex: 'Jemná chobotnice s delikátní přípravou'
+                },
+                prawnNigiri: {
+                    name: 'Kreveta Nigiri',
+                    perex: 'Sladké vařené krevety s tradiční přípravou'
+                },
+                salmonNigiri: {
+                    name: 'Losos Nigiri',
+                    perex: 'Norský losos na ochucené sushi rýži',
+                    description: 'Ručně lisované nigiri s čerstvým norským lososem na dokonale ochucené sushi rýži. Klasická kombinace, která zdůrazňuje máslovou texturu prémiového lososa.'
+                },
+                seaBassNigiri: {
+                    name: 'Mořský okoun Nigiri',
+                    perex: 'Čerstvý mořský okoun s lehkým kořeněním'
+                },
+                tunaSashimi: {
+                    name: 'Tuňák Sashimi',
+                    perex: 'Prémiový tuňák modrý, odborně nakrájený',
+                    description: 'Čerstvý tuňák modrý pocházející z tokijských rybích trhů, podávaný jako tradiční sashimi. Naši zkušení kuchaři připravují každý kus tak, aby zvýraznili přirozené chutě a texturu této prémiové ryby.'
+                },
+                yellowtailSashimi: {
+                    name: 'Žlutochvost Sashimi',
+                    perex: 'Delikátní žlutochvost s citrusovými tóny'
+                },
+
+                // Maki
+                californiaRoll: {
+                    name: 'California Roll',
+                    perex: 'Klasický roll s krabem, avokádem a okurou',
+                    description: 'Nadčasový California roll s čerstvým krabím masem, krémovým avokádem a křupavou okurou zabaleným v ochucené sushi rýži a nori. Perfektní uvedení do maki pro nováčky.'
+                },
+                dragonRoll: {
+                    name: 'Dragon Roll',
+                    perex: 'Autorská kreace šéfkuchaře Yamasaki s úhořem a avokádem',
+                    description: 'Náš podpisový roll hlavního kuchaře s grilovaným úhořem, okurou a avokádem, přikrytý plátky avokáda uspořádanými tak, aby připomínaly dračí šupiny. Dokončeno sladkou úhořskou omáčkou a sezamovými semínky.'
+                },
+                philadelphiaRoll: {
+                    name: 'Philadelphia Roll',
+                    perex: 'Uzený losos se smetanovým sýrem a okurou'
+                },
+                rainbowRoll: {
+                    name: 'Rainbow Roll',
+                    perex: 'Barevný roll přikrytý směsí sashimi'
+                },
+                salmonAvocadoRoll: {
+                    name: 'Losos Avokádo Roll',
+                    perex: 'Čerstvý losos s krémovým avokádem'
+                },
+                spicyTunaRoll: {
+                    name: 'Pikantní Tuňák Roll',
+                    perex: 'Čerstvý tuňák s pikantní majonézou a křupavou zeleninou'
+                },
+                tempuraPrawnRoll: {
+                    name: 'Tempura Kreveta Roll',
+                    perex: 'Křupavá tempura kreveta se zeleninou a omáčkou'
+                },
+                vegetableRoll: {
+                    name: 'Zeleninový Roll',
+                    perex: 'Čerstvá zelenina s avokádem a okurou'
+                },
+
+                // Hot Dishes
+                beefYakitori: {
+                    name: 'Hovězí Yakitori',
+                    perex: 'Grilované hovězí špízy s tare omáčkou'
+                },
+                chickenKatsuCurry: {
+                    name: 'Kuřecí Katsu Curry',
+                    perex: 'Křupavé obalované kuře s japonskou kari omáčkou'
+                },
+                chickenTeriyaki: {
+                    name: 'Kuřecí Teriyaki',
+                    perex: 'Grilované kuře glazované tradiční teriyaki omáčkou',
+                    description: 'Jemné grilované kuřecí stehno glazované naší domácí teriyaki omáčkou, podávané s párovanou rýží a sezónní zeleninou. Omáčka je připravována tradičními japonskými metodami se sójovou omáčkou, mirin a saké.'
+                },
+                gyozaDumplings: {
+                    name: 'Gyoza Knedlíčky',
+                    perex: 'Pažené vepřové a zeleninové knedlíčky',
+                    description: 'Ručně dělané knedlíčky plněné ochuceným vepřovým mletým masem, zelím a pažitkou. Pažené dozlatova a podávané s sójovo-octovou omáčkou na namáčení. Každý knedlíček je pečlivě skládán našimi zkušenými kuchaři.'
+                },
+                misoGlazedCod: {
+                    name: 'Miso Glazovaný Treska',
+                    perex: 'Jemný tresčí filet se sladkou miso glazurou'
+                },
+                salmonTeriyaki: {
+                    name: 'Losos Teriyaki',
+                    perex: 'Grilovaný losos s teriyaki glazurou a zeleninou'
+                },
+                tempuraSelection: {
+                    name: 'Tempura Výběr',
+                    perex: 'Směs zeleniny a krevet v lehkém křupavém těstíčku'
+                },
+                vegetableStirFry: {
+                    name: 'Smažená Zelenina',
+                    perex: 'Sezónní zelenina smažená ve woku s česnekem a zázvorem'
+                },
+
+                // Drinks
+                asahiSuperDry: {
+                    name: 'Asahi Super Dry',
+                    perex: 'Křupavé japonské ležák pivo'
+                },
+                hotSake: {
+                    name: 'Teplé Saké',
+                    perex: 'Ohřáté saké v tradiční tokkuri'
+                },
+                icedGreenTea: {
+                    name: 'Ledový Zelený Čaj',
+                    perex: 'Osvěžující studeně vařená sencha'
+                },
+                japaneseGreenTea: {
+                    name: 'Japonský Zelený Čaj',
+                    perex: 'Tradiční sencha zelený čaj'
+                },
+                japaneseWhisky: {
+                    name: 'Japonská Whisky',
+                    perex: 'Prémiová Suntory Toki whisky'
+                },
+                premiumSakeSelection: {
+                    name: 'Prémiový Výběr Saké',
+                    perex: 'Junmai saké podávané teplé nebo chlazené'
+                },
+                ramuneSoda: {
+                    name: 'Ramune Soda',
+                    perex: 'Tradiční japonská kuličková soda'
+                },
+                sparklingWater: {
+                    name: 'Perlivá Voda',
+                    perex: 'Japonská minerální voda s přírodními bublinkamy'
+                },
+
+                // Desserts
+                dorayakiPancakes: {
+                    name: 'Dorayaki Palačinky',
+                    perex: 'Nadýchané palačinky plněné sladkou pastou z červených fazolí'
+                },
+                matchaCheesecake: {
+                    name: 'Matcha Cheesecake',
+                    perex: 'Krémový cheesecake s prémiovou matcha'
+                },
+                mixedFruitMochi: {
+                    name: 'Smíšené Ovocné Mochi',
+                    perex: 'Směs ovocných mochi v různých příchutích'
+                },
+                mochiIceCream: {
+                    name: 'Mochi Zmrzlina',
+                    perex: 'Tradiční rýžový koláček plněný prémiovou zmrzlinou'
+                },
+                taiyakiFishCake: {
+                    name: 'Taiyaki Rybí Koláček',
+                    perex: 'Koláček ve tvaru ryby plněný sladkým pudingem'
+                }
+            }
+        },
+
+        news: {
+            close: 'Zavřít',
+
+            articles: {
+                loyaltyAppLaunch: {
+                    heading: 'Spuštění věrnostní aplikace',
+                    perex: 'Stáhněte si naši novou věrnostní aplikaci a odemkněte exkluzivní odměny.',
+                    text: 'S nadšením oznamujeme spuštění oficiální věrnostní aplikace Hoshimo Running Sushi, navržené tak, aby vylepšila váš zážitek ze stravování a odměnila vaši věrnost.\n\nKlíčové vlastnosti:\nZískávejte body při každé návštěvě a vyměňujte je za zdarma sushi, nápoje a exkluzivní položky menu. Jednoduše naskenujte naše QR kódy v restauraci pro automatické sbírání bodů. Přístup k slevám a speciálním nabídkám pouze v aplikaci. Procházejte naše kompletní menu, včetně sezónních specialit a podpisových jídel šéfkuchaře Yamasaki.\n\nSpeciální nabídka při spuštění:\nStáhněte si aplikaci nyní a získejte 100 uvítacích bodů - dost na zdarma miso polévku nebo zelený čaj při vaší příští návštěvě! Navíc získáte dvojnásobné body za všechny nákupy během prvního týdne.\n\nJak to funguje:\nStáhněte si aplikaci Hoshimo z App Store nebo Google Play, vytvořte si účet, navštivte jakoukoli pobočku Hoshimo a naskenujte QR kód, pak začněte získávat body a odemykejte lahodné odměny.\n\nDostupné nyní pro iOS a Android zařízení. Začněte svou cestu k exkluzivním odměnám ještě dnes!'
+                },
+
+                newHeadChefJoins: {
+                    heading: 'Nový šéfkuchař se připojuje',
+                    perex: 'Proslulý mistr sushi šéfkuchař Kuniro Yamasaki se připojuje k Hoshimo.',
+                    text: 'Po 15 letech zdokonalování svého řemesla v prestižní tokijské čtvrti Tsukiji přináší šéfkuchař Kuniro Yamasaki mimořádnou vášeň pro autentickou japonskou kuchyni do Spojeného království. Narozen v Kjótu a vyškolený pod legendárním mistrem sushi Jiro Tanaka, šéfkuchař Yamasaki pracoval v některých z nejoslavovanějších japonských restaurací.\n\nŠéfkuchař Yamasaki říká: "Jsem potěšen, že mohu přinést pravého ducha japonské sushi kultury britským strávníkům. V Hoshimo věříme, že každý kousek sushi vypráví příběh - od pečlivě vybrané ryby až po dokonale ochucené rýže."\n\nŠéfkuchař Yamasaki se specializuje na tradiční Edomae-style sushi a představil několik podpisových jídel do našeho menu, včetně svého slavného Dragon Roll a sezónních sashimi výběrů. Jeho filozofie se soustředí na používání pouze nejkvalitnějších ingrediencí, s rybami příletěnými čerstvě z proslulého tokijského trhu Toyosu dvakrát týdně.\n\nZveme vás k návštěvě kterékoli z našich poboček Hoshimo, abyste zažili výjimečné výtvory šéfkuchaře Yamasaki a byli svědky uměleckého zpracování autentické japonské kuchyně.'
+                },
+
+                gloucesterOpening: {
+                    heading: 'Otevření v Gloucester',
+                    perex: 'Otevíráme 1. srpna v Eastgate Shopping Centre, Gloucester.',
+                    text: 'Ve čtvrtek 1. srpna 2025 oficiálně otevře Hoshimo Running Sushi své dveře v Eastgate Shopping Centre v Gloucester a přinese naši charakteristickou running sushi zkušenost do tohoto historického katedrálního města.\n\nDetail umístění:\nAdresa: Eastgate Street, Gloucester GL1 1PA\nOtevírací doba: Pondělí-Neděle, 11:00 - 21:00\n\nCo očekávat:\nNaše pobočka v Gloucester disponuje spektakulárním 40metrovým dopravníkovým pásem s více než 100 druhy čerstvého sushi, sashimi a teplých japonských jídel. Restaurace se pyšní 80 místy s moderním japonským interiérovým designem, doplněným tradičními dřevěnými prvky.\n\nVelikonoční oslavy otevření:\nZdarma miso polévka pro prvních 50 zákazníků, 20% sleva na všechny položky během otevíracího víkendu, živé sushi demonstrace od našich zkušených kuchařů a tradiční degustace saké pro hosty 18+.\n\nZávazek k místním dodavatelům:\nNaše restaurace v Gloucester bude nakupovat čerstvou zeleninu a byliny od místních dodavatelů z Gloucestershire, přičemž si zachováme náš závazek k prémiovým japonským ingrediencím příletěným čerstvě z Tokia.\n\nAť už nakupujete v Eastgate Centre nebo prozkoumáváte historické památky Gloucester, zveme vás k zážitku autentického running sushi. Nemůžeme se dočkat, až vás přivítáme!'
+                },
+
+                norwichOpening: {
+                    heading: 'Otevření v Norwich',
+                    perex: 'Otevíráme 1. září v Castle Quarter, Norwich.',
+                    text: 'Hoshimo Running Sushi otevře své dveře v Norwich v neděli 1. září 2025, umístěné v populární nákupní destinaci Castle Quarter v srdci města.\n\nDetail umístění:\nAdresa: Castle Meadow, Norwich NR1 3DD\nOtevírací doba: Pondělí-Neděle, 11:00 - 21:00\n\nDokonalé přivítání v Norwich:\nNaše restaurace v Norwich byla speciálně navržena tak, aby odrážela jedinečný charakter města při zachování autentické japonské estetiky. 75místná restaurace má akcenty z místně získaného Norfolk dřeva, které doplňují náš charakteristický dopravníkový systém.\n\nVelikonoční víkend otevření (1.-3. září):\nZdarma edamame pro všechny hosty, 25% sleva na prémiové sushi výběry, demonstrace tradičního čajového obřadu a dětské sushi workshopy v sobotu a neděli ve 14:00.\n\nPodpora místního Norfolk:\nJsme hrdí na partnerství s dodavateli z Norfolk pro naše čerstvé produkty, včetně zeleniny z místních farem a bylin ze zahrad komunity Norwich. Najali jsme 25 místních členů týmu a budeme podporovat charitativní organizace Norfolk.\n\nSpeciální Norwich menu položky:\nŠéfkuchař Yamasaki vytvořil exkluzivní menu doplňky včetně Norfolk Coast Roll s místně získaným krabem, Cathedral City Special a Canary Sunset v barvách Norwich City FC.\n\nPřipojte se k nám na nezapomenutelný otevírací víkend!'
+                },
+
+                wakefieldOpening: {
+                    heading: 'Otevření ve Wakefield',
+                    perex: 'Otevíráme 1. října v Trinity Walk Shopping Centre.',
+                    text: 'Hoshimo Running Sushi otevře svou nejnovější restauraci ve Wakefield ve středu 1. října 2025, umístěnou v rušném Trinity Walk Shopping Centre.\n\nDetail umístění:\nAdresa: Marsh Way, Wakefield WF1 1QS\nOtevírací doba: Pondělí-Neděle, 11:00 - 21:00\n\nPřinášíme Japonsko do West Yorkshire:\nNaše pobočka ve Wakefield představuje naši expanzi do Yorkshire, přinášející autentické japonské chutě do tohoto historického tržního města. Restaurace má 85 míst uspořádaných kolem našeho charakteristického 45metrového dopravníkového pásu, s moderním designem, který vzdává hold jak japonskému minimalismu, tak průmyslovému dědictví Yorkshire.\n\nVelikonočních slavnosti otevření (1.-7. října):\nZdarma gyoza pro prvních 100 zákazníků, 30% sleva na všechny prémiové sashimi, Yorkshire-Japonsko kulturní výstava s místními umělci a rodinné sushi workshopy každý víkendový odpoledne.\n\nYorkshire ingredience, japonské techniky:\nNaše restaurace ve Wakefield bude nabízet čerstvé produkty z místních farem, včetně zeleniny z Rhubarb Triangle a bylin od dodavatelů Yorkshire Dales, kombinované s prémiovými ingrediencemi importovanými přímo z Japonska.\n\nExkluzivní Wakefield speciality:\nPředstavujeme Yorkshire Gold Roll s místní uzenou pstruhí, Rhubarb Dessert Maki s proslulým Yorkshire rebarborou a Cathedral City Salmon se skotským lososem.\n\nNavštivte nás od 1. října a objevte autentické running sushi v Yorkshire!'
+                }
+            }
+        },
+
+
         // Common
         common: {
             ok: 'OK',
@@ -539,12 +799,69 @@ export const translations = {
                 second: 'nd',
                 third: 'rd',
                 other: 'th'
+            },
+            coca_cola: {
+                name: 'Coca Cola for free',
+                description: 'Complimentary Coca Cola for each person when ordering running sushi. Valid with any running sushi order.'
+            },
+
+            children_sushi: {
+                name: 'Children running sushi gratis',
+                description: 'Kids under 10 years old eat running sushi for free when accompanied by paying adult. Valid ID required.'
+            },
+
+            sake_drink: {
+                name: 'Saké welcome drink',
+                description: 'Complimentary welcome saké shot for each person at your table. Must be 18+ with valid ID.'
+            },
+
+            discount_10: {
+                name: '-10% running sushi discount',
+                description: 'Get 10% off running sushi price for each person at your table. Valid for up to 6 people.'
+            },
+
+            premium_boat: {
+                name: 'Premium Dragon Boat Sushi',
+                description: 'Complimentary premium sushi boat worth £100 with your running sushi experience. Must order for 2+ people.'
             }
         },
 
         // News screen
+        // News screen - kompletní sekce
         news: {
-            close: 'Close'
+            close: 'Close',
+
+            articles: {
+                loyaltyAppLaunch: {
+                    heading: 'Loyalty App Launch',
+                    perex: 'Download our new loyalty app and unlock exclusive rewards.',
+                    text: 'We are excited to announce the launch of the official Hoshimo Running Sushi loyalty app, designed to enhance your dining experience and reward your loyalty.\n\nKey Features:\nEarn points with every visit and redeem them for free sushi, drinks, and exclusive menu items. Simply scan our in-restaurant QR codes to collect points automatically. Access app-only discounts and special offers. Browse our full menu, including seasonal specials and Chef Yamasaki\'s signature dishes.\n\nLaunch Special Offer:\nDownload the app now and receive 100 welcome points - enough for a complimentary miso soup or green tea on your next visit! Plus, earn double points on all purchases during your first week.\n\nHow It Works:\nDownload the Hoshimo app from the App Store or Google Play, create your account, visit any Hoshimo location and scan the QR code, then start earning points and unlock delicious rewards.\n\nAvailable now for iOS and Android devices. Start your journey towards exclusive rewards today!'
+                },
+
+                newHeadChefJoins: {
+                    heading: 'New Head Chef Joins',
+                    perex: 'Renowned sushi master Chef Kuniro Yamasaki joins Hoshimo.',
+                    text: 'After 15 years perfecting his craft in Tokyo\'s prestigious Tsukiji district, Chef Kuniro Yamasaki brings extraordinary passion for authentic Japanese cuisine to the UK. Born in Kyoto and trained under legendary sushi master Jiro Tanaka, Chef Yamasaki has worked in some of Japan\'s most celebrated restaurants.\n\nChef Yamasaki states: "I am delighted to bring the true spirit of Japanese sushi culture to British diners. At Hoshimo, we believe that every piece of sushi tells a story - from the carefully selected fish to the perfectly seasoned rice."\n\nChef Yamasaki specialises in traditional Edomae-style sushi and has introduced several signature dishes to our menu, including his famous Dragon Roll and seasonal sashimi selections. His philosophy centres on using only the finest ingredients, with fish flown in fresh from Tokyo\'s renowned Toyosu Market twice weekly.\n\nWe invite you to visit any of our Hoshimo locations to experience Chef Yamasaki\'s exceptional creations and witness the artistry of authentic Japanese cuisine firsthand.'
+                },
+
+                gloucesterOpening: {
+                    heading: 'Gloucester Opening',
+                    perex: 'Opening 1st August at Eastgate Shopping Centre, Gloucester.',
+                    text: 'On Thursday, 1st August 2025, Hoshimo Running Sushi will officially open its doors at Eastgate Shopping Centre in Gloucester, bringing our signature running sushi experience to this historic cathedral city.\n\nLocation Details:\nAddress: Eastgate Street, Gloucester GL1 1PA\nOpening Hours: Monday-Sunday, 11:00 AM - 9:00 PM\n\nWhat to Expect:\nOur Gloucester location features a spectacular 40-metre conveyor belt showcasing over 100 varieties of fresh sushi, sashimi, and hot Japanese dishes. The restaurant boasts 80 seats with modern Japanese interior design, complete with traditional wooden elements.\n\nGrand Opening Celebrations:\nFree miso soup for the first 50 customers, 20% discount on all items for the opening weekend, live sushi demonstrations by our skilled chefs, and traditional sake tasting for guests 18+.\n\nLocal Sourcing Commitment:\nOur Gloucester restaurant will source fresh vegetables and herbs from local Gloucestershire suppliers, whilst maintaining our commitment to premium Japanese ingredients flown in fresh from Tokyo.\n\nWhether you\'re shopping at Eastgate Centre or exploring Gloucester\'s historic attractions, we invite you to experience authentic running sushi. We can\'t wait to welcome you!'
+                },
+
+                norwichOpening: {
+                    heading: 'Norwich Opening',
+                    perex: 'Opening 1st September at Castle Quarter, Norwich.',
+                    text: 'Hoshimo Running Sushi will open its doors in Norwich on Sunday, 1st September 2025, located in the popular Castle Quarter shopping destination in the heart of the city.\n\nLocation Details:\nAddress: Castle Meadow, Norwich NR1 3DD\nOpening Hours: Monday-Sunday, 11:00 AM - 9:00 PM\n\nA Perfect Norwich Welcome:\nOur Norwich restaurant has been specially designed to reflect the city\'s unique character whilst maintaining authentic Japanese aesthetics. The 75-seat restaurant features locally-sourced Norfolk timber accents, complementing our signature conveyor belt system.\n\nGrand Opening Weekend (1st-3rd September):\nComplimentary edamame for all guests, 25% discount on premium sushi selections, traditional tea ceremony demonstrations, and children\'s sushi-making workshops on Saturday and Sunday at 2:00 PM.\n\nSupporting Local Norfolk:\nWe\'re proud to partner with Norfolk suppliers for our fresh produce, including vegetables from local farms and herbs from Norwich\'s community gardens. We\'ve hired 25 local team members and will support Norfolk charities.\n\nSpecial Norwich Menu Items:\nChef Yamasaki has created exclusive menu additions including Norfolk Coast Roll featuring locally-sourced crab, Cathedral City Special, and Canary Sunset in Norwich City FC colours.\n\nJoin us for an unforgettable opening weekend!'
+                },
+
+                wakefieldOpening: {
+                    heading: 'Wakefield Opening',
+                    perex: 'Opening 1st October at Trinity Walk Shopping Centre.',
+                    text: 'Hoshimo Running Sushi will open its newest restaurant in Wakefield on Wednesday, 1st October 2025, located in the bustling Trinity Walk Shopping Centre.\n\nLocation Details:\nAddress: Marsh Way, Wakefield WF1 1QS\nOpening Hours: Monday-Sunday, 11:00 AM - 9:00 PM\n\nBringing Japan to West Yorkshire:\nOur Wakefield location represents our expansion into Yorkshire, bringing authentic Japanese flavours to this historic market town. The restaurant features 85 seats arranged around our signature 45-metre conveyor belt, with contemporary design that pays homage to both Japanese minimalism and Yorkshire\'s industrial heritage.\n\nGrand Opening Festivities (1st-7th October):\nFree gyoza for the first 100 customers, 30% discount on all premium sashimi, Yorkshire-Japan cultural showcase featuring local artists, and family sushi workshops every weekend afternoon.\n\nYorkshire Ingredients, Japanese Techniques:\nOur Wakefield restaurant will feature fresh produce from local farms, including vegetables from the Rhubarb Triangle and herbs from Yorkshire Dales suppliers, combined with premium ingredients imported directly from Japan.\n\nExclusive Wakefield Specials:\nWe\'re introducing Yorkshire Gold Roll featuring local smoked trout, Rhubarb Dessert Maki using famous Yorkshire rhubarb, and Cathedral City Salmon with Scottish salmon.\n\nVisit us from 1st October and discover authentic running sushi in Yorkshire!'
+                }
+            }
         },
 
         // Profile modal
@@ -835,6 +1152,207 @@ export const translations = {
                 greatThanks: 'Great, thanks!'
             }
         },
+
+        restaurantMenuCommon: {
+            loadingMenu: 'Loading menu...',
+            infoText: 'Enjoy all you can eat with all dishes bellow',
+            prepTime: 'Prep time:',
+            popularity: 'Popularity:',
+            thankYouRating: 'Thank you for your rating!',
+            allergens: 'Allergens:',
+            backToMenu: 'Back to menu'
+        },
+
+        restaurantMenu: {
+            categories: {
+                allYouCanEat: 'All You Can Eat',
+                sushi: 'Sushi',
+                maki: 'Maki',
+                hotDishes: 'Hot Dishes',
+                drinks: 'Drinks',
+                desserts: 'Desserts'
+            },
+
+            items: {
+                // All You Can Eat
+                adultAllYouCanEat: {
+                    name: 'Adult All You Can Eat',
+                    perex: 'Unlimited access to our complete running sushi experience',
+                    description: 'Enjoy unlimited access to our entire running sushi belt featuring fresh sushi, maki, hot dishes and desserts. Our chefs continuously prepare new items throughout your dining experience. Drinks are ordered separately.'
+                },
+                childAllYouCanEat: {
+                    name: 'Child All You Can Eat',
+                    perex: 'Unlimited running sushi for children under 15',
+                    description: 'Children under 15 years enjoy the same unlimited access to our complete running sushi experience at a reduced price. Perfect introduction to authentic Japanese cuisine for young diners.'
+                },
+
+                // Sushi
+                eelNigiri: {
+                    name: 'Eel Nigiri',
+                    perex: 'Glazed freshwater eel with sweet sauce'
+                },
+                mackerelNigiri: {
+                    name: 'Mackerel Nigiri',
+                    perex: 'Cured mackerel with traditional vinegar preparation'
+                },
+                octopusNigiri: {
+                    name: 'Octopus Nigiri',
+                    perex: 'Tender octopus with delicate preparation'
+                },
+                prawnNigiri: {
+                    name: 'Prawn Nigiri',
+                    perex: 'Sweet cooked prawns with traditional preparation'
+                },
+                salmonNigiri: {
+                    name: 'Salmon Nigiri',
+                    perex: 'Norwegian salmon on seasoned sushi rice',
+                    description: 'Hand-pressed nigiri featuring fresh Norwegian salmon atop perfectly seasoned sushi rice. A classic combination that showcases the buttery texture of premium salmon.'
+                },
+                seaBassNigiri: {
+                    name: 'Sea Bass Nigiri',
+                    perex: 'Fresh sea bass with light seasoning'
+                },
+                tunaSashimi: {
+                    name: 'Tuna Sashimi',
+                    perex: 'Premium bluefin tuna, expertly sliced',
+                    description: 'Fresh bluefin tuna sourced from Tokyo fish markets, served as traditional sashimi. Our skilled chefs prepare each piece to highlight the natural flavours and texture of this premium fish.'
+                },
+                yellowtailSashimi: {
+                    name: 'Yellowtail Sashimi',
+                    perex: 'Delicate yellowtail with citrus notes'
+                },
+
+                // Maki
+                californiaRoll: {
+                    name: 'California Roll',
+                    perex: 'Classic roll with crab, avocado and cucumber',
+                    description: 'The timeless California roll featuring fresh crab meat, creamy avocado, and crisp cucumber wrapped in seasoned sushi rice and nori. A perfect introduction to maki for newcomers.'
+                },
+                dragonRoll: {
+                    name: 'Dragon Roll',
+                    perex: 'Chef Yamasaki signature creation with eel and avocado',
+                    description: 'Our head chef signature roll featuring grilled eel, cucumber and avocado, topped with sliced avocado arranged to resemble dragon scales. Finished with sweet eel sauce and sesame seeds.'
+                },
+                philadelphiaRoll: {
+                    name: 'Philadelphia Roll',
+                    perex: 'Smoked salmon with cream cheese and cucumber'
+                },
+                rainbowRoll: {
+                    name: 'Rainbow Roll',
+                    perex: 'Colourful roll topped with assorted sashimi'
+                },
+                salmonAvocadoRoll: {
+                    name: 'Salmon Avocado Roll',
+                    perex: 'Fresh salmon with creamy avocado'
+                },
+                spicyTunaRoll: {
+                    name: 'Spicy Tuna Roll',
+                    perex: 'Fresh tuna with spicy mayo and crisp vegetables'
+                },
+                tempuraPrawnRoll: {
+                    name: 'Tempura Prawn Roll',
+                    perex: 'Crispy tempura prawn with vegetables and sauce'
+                },
+                vegetableRoll: {
+                    name: 'Vegetable Roll',
+                    perex: 'Fresh vegetables with avocado and cucumber'
+                },
+
+                // Hot Dishes
+                beefYakitori: {
+                    name: 'Beef Yakitori',
+                    perex: 'Grilled beef skewers with tare sauce'
+                },
+                chickenKatsuCurry: {
+                    name: 'Chicken Katsu Curry',
+                    perex: 'Crispy breaded chicken with Japanese curry sauce'
+                },
+                chickenTeriyaki: {
+                    name: 'Chicken Teriyaki',
+                    perex: 'Grilled chicken glazed with traditional teriyaki sauce',
+                    description: 'Tender grilled chicken thigh glazed with our house-made teriyaki sauce, served with steamed rice and seasonal vegetables. The sauce is prepared using traditional Japanese methods with soy sauce, mirin, and sake.'
+                },
+                gyozaDumplings: {
+                    name: 'Gyoza Dumplings',
+                    perex: 'Pan-fried pork and vegetable dumplings',
+                    description: 'Handmade dumplings filled with seasoned pork mince, cabbage, and chives. Pan-fried until golden and served with soy-vinegar dipping sauce. Each dumpling is carefully pleated by our skilled chefs.'
+                },
+                misoGlazedCod: {
+                    name: 'Miso Glazed Cod',
+                    perex: 'Delicate cod fillet with sweet miso glaze'
+                },
+                salmonTeriyaki: {
+                    name: 'Salmon Teriyaki',
+                    perex: 'Grilled salmon with teriyaki glaze and vegetables'
+                },
+                tempuraSelection: {
+                    name: 'Tempura Selection',
+                    perex: 'Assorted vegetables and prawns in light crispy batter'
+                },
+                vegetableStirFry: {
+                    name: 'Vegetable Stir Fry',
+                    perex: 'Seasonal vegetables wok-fried with garlic and ginger'
+                },
+
+                // Drinks
+                asahiSuperDry: {
+                    name: 'Asahi Super Dry',
+                    perex: 'Crisp Japanese lager beer'
+                },
+                hotSake: {
+                    name: 'Hot Sake',
+                    perex: 'Warmed sake in traditional tokkuri'
+                },
+                icedGreenTea: {
+                    name: 'Iced Green Tea',
+                    perex: 'Refreshing cold-brewed sencha'
+                },
+                japaneseGreenTea: {
+                    name: 'Japanese Green Tea',
+                    perex: 'Traditional sencha green tea'
+                },
+                japaneseWhisky: {
+                    name: 'Japanese Whisky',
+                    perex: 'Premium Suntory Toki whisky'
+                },
+                premiumSakeSelection: {
+                    name: 'Premium Sake Selection',
+                    perex: 'Junmai sake served warm or chilled'
+                },
+                ramuneSoda: {
+                    name: 'Ramune Soda',
+                    perex: 'Traditional Japanese marble soda'
+                },
+                sparklingWater: {
+                    name: 'Sparkling Water',
+                    perex: 'Japanese mineral water with natural bubbles'
+                },
+
+                // Desserts
+                dorayakiPancakes: {
+                    name: 'Dorayaki Pancakes',
+                    perex: 'Fluffy pancakes filled with sweet red bean paste'
+                },
+                matchaCheesecake: {
+                    name: 'Matcha Cheesecake',
+                    perex: 'Creamy cheesecake infused with premium matcha'
+                },
+                mixedFruitMochi: {
+                    name: 'Mixed Fruit Mochi',
+                    perex: 'Assorted fruit-flavoured mochi selection'
+                },
+                mochiIceCream: {
+                    name: 'Mochi Ice Cream',
+                    perex: 'Traditional rice cake filled with premium ice cream'
+                },
+                taiyakiFishCake: {
+                    name: 'Taiyaki Fish Cake',
+                    perex: 'Fish-shaped pastry filled with sweet custard'
+                }
+            }
+        },
+
+
 
         // Common
         common: {

@@ -17,6 +17,8 @@ import {frontendClass} from "../services/FeClass";
 import {useFadeBetweenTabs} from "../services/useFadeBetweenTabs";
 import designSystem from "../constants/globalStyles";
 import {LinearGradient} from "expo-linear-gradient";
+import { getText } from "../services/LanguageUtils";
+import { translateMenu } from "../services/MenuMapper";
 
 // Import obrázku z assets
 const menuHeaderImage = require("../../../assets/menupic2.png");
@@ -37,7 +39,63 @@ export default function Menu() {
             try {
                 const loadedMenu = await frontendClass.getMenu();
                 if (loadedMenu) {
-                    setRestaurantMenu(loadedMenu);
+                    // Přeložíme menu před nastavením do state
+                    const translatedMenu = translateMenu(loadedMenu);
+                    setRestaurantMenu(translatedMenu);
+
+                    // 🔍 DEBUG - vypíšeme všechna data z backendu
+                    console.log("=== MENU Z BACKENDU ===");
+                    console.log("Celkový počet kategorií:", loadedMenu.categories.length);
+
+                    loadedMenu.categories.forEach((category: MenuCategory, categoryIndex: number) => {
+                        console.log(`\nKategorie ${categoryIndex + 1}:`);
+                        console.log(`  name: "${category.name}"`);
+                        console.log(`  Počet položek: ${category.items.length}`);
+
+                        category.items.forEach((item: MenuItem, itemIndex: number) => {
+                            console.log(`\n  Položka ${itemIndex + 1}:`);
+                            console.log(`    name: "${item.name}"`);
+                            console.log(`    perex: "${item.perex}"`);
+                            console.log(`    description: "${item.description}"`);
+                            console.log(`    price: ${item.price}`);
+                            console.log(`    weightGrams: ${item.weightGrams}`);
+                            if (item.preparationTimeMinutes) {
+                                console.log(`    preparationTimeMinutes: ${item.preparationTimeMinutes}`);
+                            }
+                            if (item.allergens && item.allergens.length > 0) {
+                                console.log(`    allergens: [${item.allergens.join(', ')}]`);
+                            }
+                            if (item.specialCategory && item.specialCategory.length > 0) {
+                                console.log(`    specialCategory: [${item.specialCategory.join(', ')}]`);
+                            }
+                            console.log("    ---");
+                        });
+                    });
+
+                    // Unikátní hodnoty pro mapování
+                    const allItems = loadedMenu.categories.flatMap((cat: MenuCategory) => cat.items);
+                    const uniqueNames = [...new Set(allItems.map((item: MenuItem) => item.name))];
+                    const uniquePerex = [...new Set(allItems.map((item: MenuItem) => item.perex))];
+                    const uniqueDescriptions = [...new Set(allItems.map((item: MenuItem) => item.description))];
+                    const uniqueCategories = [...new Set(loadedMenu.categories.map((cat: MenuCategory) => cat.name))];
+
+                    console.log("\n=== UNIKÁTNÍ HODNOTY PRO MAPOVÁNÍ ===");
+                    console.log("Unikátní kategorie:", uniqueCategories);
+                    console.log("Unikátní názvy položek:", uniqueNames);
+                    console.log("Unikátní perex hodnoty:", uniquePerex);
+                    console.log("Unikátní description hodnoty:", uniqueDescriptions);
+
+                    // Také zjistíme, které texty se zobrazují uživateli
+                    console.log("\n=== TEXTY KTERÉ POTŘEBUJEME PŘELOŽIT ===");
+                    console.log("Loading text:", getText('restaurantMenuCommon.loadingMenu'));
+                    console.log("Info text:", getText('restaurantMenuCommon.infoText'));
+                    console.log("Modal texts:", [
+                        getText('restaurantMenuCommon.prepTime'),
+                        getText('restaurantMenuCommon.popularity'),
+                        getText('restaurantMenuCommon.thankYouRating'),
+                        getText('restaurantMenuCommon.allergens'),
+                        getText('restaurantMenuCommon.backToMenu')
+                    ]);
                 }
             } catch (error) {
                 console.error("Error loading menu:", error);
@@ -94,7 +152,9 @@ export default function Menu() {
     if (loading) {
         return (
             <View style={styles.loadingContainer}>
-                <Text style={{...designSystem.TYPOGRAPHY.BODY}}>Loading menu...</Text>
+                <Text style={{...designSystem.TYPOGRAPHY.BODY}}>
+                    {getText('restaurantMenuCommon.loadingMenu')}
+                </Text>
             </View>
         );
     }
@@ -123,14 +183,12 @@ export default function Menu() {
                     >
                         <View style={styles.infoContent}>
                             <Text style={styles.infoText}>
-                                Enjoy all you can eat with all dishes bellow
+                                {getText('restaurantMenuCommon.infoText')}
                             </Text>
                         </View>
                     </LinearGradient>
 
                     <View style={styles.mainContainer}>
-
-
                         {restaurantMenu && restaurantMenu.categories.map((category, categoryIndex) => (
                             <View key={categoryIndex} style={styles.categoryContainer}>
                                 <Text style={styles.categoryTitle}>{category.name}</Text>
@@ -185,25 +243,29 @@ export default function Menu() {
                                         <Text style={styles.modalWeight}>{itemOpened.weightGrams} g</Text>
                                         {itemOpened.preparationTimeMinutes && (
                                             <Text style={styles.modalPrepTime}>
-                                                Prep time: {itemOpened.preparationTimeMinutes} min
+                                                {getText('restaurantMenuCommon.prepTime')} {itemOpened.preparationTimeMinutes} min
                                             </Text>
                                         )}
                                     </View>
 
                                     {/* Interaktivní hvězdičky popularity */}
                                     <View style={styles.popularityContainer}>
-                                        <Text style={styles.popularityLabel}>Popularity: </Text>
+                                        <Text style={styles.popularityLabel}>
+                                            {getText('restaurantMenuCommon.popularity')}
+                                        </Text>
                                         {renderStars(itemOpened.id, itemOpened.popularity)}
                                     </View>
                                     {userRating[itemOpened.id] && (
                                         <Text style={styles.ratingMessage}>
-                                            Thank you for your rating!
+                                            {getText('restaurantMenuCommon.thankYouRating')}
                                         </Text>
                                     )}
 
                                     {itemOpened.allergens && itemOpened.allergens.length > 0 && (
                                         <View style={styles.allergens}>
-                                            <Text style={styles.allergensTitle}>Allergens:</Text>
+                                            <Text style={styles.allergensTitle}>
+                                                {getText('restaurantMenuCommon.allergens')}
+                                            </Text>
                                             <Text>{itemOpened.allergens.join(', ')}</Text>
                                         </View>
                                     )}
@@ -224,7 +286,9 @@ export default function Menu() {
                                 <TouchableOpacity
                                     style={styles.closeButton}
                                     onPress={closeItem}>
-                                    <Text style={styles.closeButtonText}>Back to menu</Text>
+                                    <Text style={styles.closeButtonText}>
+                                        {getText('restaurantMenuCommon.backToMenu')}
+                                    </Text>
                                 </TouchableOpacity>
                             </ScrollView>
                         </SafeAreaView>

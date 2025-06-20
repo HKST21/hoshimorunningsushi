@@ -17,7 +17,8 @@ import {frontendClass} from "../services/FeClass";
 import {useFadeBetweenTabs} from "../services/useFadeBetweenTabs";
 import designSystem from "../constants/globalStyles";
 import {LinearGradient} from 'expo-linear-gradient';
-import {getText, getCurrentLanguage} from "../services/LanguageUtils"; // ✅ Import lokalizace
+import {getText, getCurrentLanguage} from "../services/LanguageUtils";
+import {translateNewsArticles} from "../services/NewsMapper";
 
 export default function Novinky() {
     const [selectedArticle, setSelectedArticle] = useState<NewsArticle | null>(null);
@@ -29,7 +30,9 @@ export default function Novinky() {
             const loadedNews = await frontendClass.getNews();
 
             if (Array.isArray(loadedNews)) {
-                setArticles(loadedNews);
+                // Přeložíme články před nastavením do state
+                const translatedArticles = translateNewsArticles(loadedNews);
+                setArticles(translatedArticles);
             } else {
                 console.warn("❗ Error loading news:", loadedNews);
             }
